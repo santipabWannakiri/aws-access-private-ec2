@@ -36,7 +36,13 @@ Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Co
   <img src="images/user-group-policy-role.png" alt="image description" width="500" height="300">
 </p>
 
-Before we start to create any AWS resources and EC2 instants, I would like to start with access management. According to the illustration above, we're going to configure IAM at the following:.
+Before we start to create any AWS resources and EC2 instants, I would like to start with access management. According to the illustration above, we're going to login to root user and configure IAM at the following:
+1. Create `IAM USER`
+* `azd-admin` Responsible for creating AWS resources for the POC.
+* `azd-assume` Used to assume a role via the CLI for accessing EC2 instances.
+2. Create `User groups`
+* Create a user group named `azd-creator-group`.
+* Attach appropriate policies to the group, such as AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
 
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
