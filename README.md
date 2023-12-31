@@ -14,6 +14,16 @@ Creating a subnet within a VPC and launching EC2 instances in that subnet is con
 Accessing instances without public IPv4 addresses in private subnets requires additional configurations before able to access to EC2 instant in private subnet.
 
 ## Connect to your instances without requiring a public IPv4
+AWS provides various methods to securely access EC2 instances in private subnets. The methods you mentioned are commonly used for different use cases such as \
+`AWS VPN` Creates an encrypted tunnel over the internet, allowing private communication between your on-premises network and instances in the VPC.\
+`Bastion Hosts` A bastion host is deployed in a public subnet with a public IP. Users connect to the bastion host first and then jump to private instances.\
+`AWS Systems Manager Session Manager` Allows you to access instances without the need for direct public IP addresses. Accessible through the AWS Management Console, AWS CLI, or SDK.
+
+However, all of the way above, there are pros and cons to the differences in use cases. For example, Bastion Host still needs a public IP and also needs to dedicate an additional instant to be an intermedia to connect to your target instant in a private subnet.
+
+Therefore, AWS launched a new feature called `EC2 Instance Connect Endpoint Service` that can help you connect to your instant without a public IP, and there is no additional cost charge.
+Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
+
 
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
