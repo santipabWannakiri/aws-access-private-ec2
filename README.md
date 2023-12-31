@@ -22,6 +22,10 @@ AWS provides various methods to securely access EC2 instances in private subnets
 However, all of the way above, there are pros and cons to the differences in use cases. For example, Bastion Host still needs a public IP and also needs to dedicate an additional instant to be an intermedia to connect to your target instant in a private subnet.
 
 Therefore, AWS launched a new feature called `EC2 Instance Connect Endpoint Service` that can help you connect to your instant without a public IP, and there is no additional cost charge.
+<p align="center">
+  <img src="images/ec2-connect-endpoint.png" alt="image description" width="500" height="400">
+</p>
+
 Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
 
 
