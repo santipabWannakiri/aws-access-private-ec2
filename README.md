@@ -42,7 +42,7 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 * `azd-assume` Used to assume a role via the CLI for accessing EC2 instances.
 2. Create `User groups`
 * Create a user group named `azd-creator-group`.
-* Attach appropriate policies to the group, such as AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
+* Attach appropriate policies to the group, such as IAMFullAccess, AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
