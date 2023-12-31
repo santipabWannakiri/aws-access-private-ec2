@@ -8,6 +8,11 @@ Refer : [New – AWS Public IPv4 Address Charge + Public IP Insights](https://aw
 ## EC2 Instance without public IPv4 
 Creating a subnet within a VPC and launching EC2 instances in that subnet is considered a best practice for enhancing security. This approach ensures that the EC2 instances do not directly receive public IPv4 addresses. This is particularly advantageous when the instances running the application are not directly involved with or connected to end-users. In such scenarios, providing public IPv4 addresses to these instances is unnecessary, aligning with security best practices.
 
+Accessing instances without public IPv4 addresses in private subnets requires additional configurations before able to access to EC2 instant in private subnet.
+
+## Connect to your instances without requiring a public IPv4
+
+
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
 
