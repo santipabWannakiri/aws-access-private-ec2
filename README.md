@@ -29,6 +29,8 @@ Therefore, AWS launched a new feature called `EC2 Instance Connect Endpoint Serv
 Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
 
 
+## Prerequisites before using the EC2 Instance Connect Endpoint Service
+
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
