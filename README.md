@@ -31,12 +31,12 @@ Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Co
 
 ## Prerequisites before using the EC2 Instance Connect Endpoint Service
 
-### IAM USER, Policy and Role
+### IAM USER, Group, Policy and Role
 <p align="center">
   <img src="images/user-group-policy-role.png" alt="image description" width="500" height="300">
 </p>
 
-
+Before we start to create any AWS resources and EC2 instants, I would like to start with access management. According to the illustration above, we're going to configure IAM at the following:.
 
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
