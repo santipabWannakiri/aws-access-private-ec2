@@ -43,7 +43,12 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 2. Create `User groups`
 * Create a user group named `azd-creator-group`.
 * Attach appropriate policies to the group, such as AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
-
+4. Create Policies
+* Create custom Policies named `enable-enpoint-policy`
+* 
+3. Create `Role`
+* Create a rile named `azd-assume-role`
+* 
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
