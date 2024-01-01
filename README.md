@@ -65,8 +65,10 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 * Choose Security groups
 * Choose the APP private subnet in the picture above
 * Click Create endpoint
-* Once the endpoint is created, please check the console and copy the Endpoint ID
-Refer : 
+* Once the endpoint is created, please check the console and copy the `Endpoint ID`
+
+Refer : [Create an EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ec2-instance-connect-endpoints.html#create-eice)
+
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
