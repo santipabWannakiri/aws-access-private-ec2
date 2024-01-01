@@ -42,11 +42,11 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 * `azd-assume` Used to assume a role via the CLI for accessing EC2 instances.
 2. Create `User groups`
 * Create a user group named `azd-creator-group`.
-* Attach appropriate policies to the group, such as IAMFullAccess, AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
+* Attach appropriate policies to the group, such as IAMAccess, AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
 3. Create `Role`
 * Create a role named `azd-assume-role`
 * Configure Trust relationships to IAM USER `azd-assume`
-
+#### Now we can switch to IAM USER azd-admin to conduct the policy and endpoint service part
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
