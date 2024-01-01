@@ -47,6 +47,24 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 * Create a role named `azd-assume-role`
 * Configure Trust relationships to IAM USER `azd-assume`
 #### Now we can switch to IAM USER azd-admin to conduct the policy and endpoint service part
+<p align="center">
+  <img src="images/poc-scenario.png" alt="image description" width="300" height="400">
+</p>
+
+1. Create VPC and Private subnet 
+* Create VPC with only 1 availwith IPv4 CIDR `10.0.0.0/16`
+* Create 2 private subnet with IPv4 CIDR `10.0.2.0/24` and `10.0.3.0/24` in same Availability Zones 
+
+2. Create Endpoint Service
+* Navigate to VPC > Endpoints > Create endpoint
+* Provide endpoint name
+* Choose the service category as an `EC2 Instance Connect Endpoint`
+* Choose the VPC that we have created on step 1
+* Choose Security groups
+* Choose the APP private subnet in the picture above
+* Click Create endpoint
+* Once the endpoint is created, please check the console and copy the Endpoint ID
+  
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
