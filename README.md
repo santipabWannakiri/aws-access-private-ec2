@@ -71,16 +71,56 @@ Refer : [Create an EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AW
 
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
-* 
+
+ ```json
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Sid": "EC2InstanceConnect",
+            "Action": "ec2-instance-connect:OpenTunnel",
+            "Effect": "Allow",
+            "Resource": "arn:aws:ec2:region:account-id:instance-connect-endpoint/eice-123456789abcdef",
+            "Condition": {
+                "NumericEquals": {
+                    "ec2-instance-connect:remotePort": "22"
+                },
+                "NumericLessThanEquals": {
+                    "ec2-instance-connect:maxTunnelDuration": "3600"
+                }
+            }
+        },
+        {
+            "Sid": "SSHPublicKey",
+            "Effect": "Allow",
+            "Action": "ec2-instance-connect:SendSSHPublicKey",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:osuser": "ubuntu"
+                }
+            }
+        },
+        {
+            "Sid": "Describe",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceConnectEndpoints"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+ ```
+Refer : [Allow users to use EC2 Instance Connect Endpoint to connect to instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
 
-[Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
 
 [connect to an instance using the instance ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html#connect-linux-inst-eic-cli-ssh)
 
 
-[Allow users to use EC2 Instance Connect Endpoint to connect to instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-CreateInstanceConnectEndpoint)
+
 
 
 
