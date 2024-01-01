@@ -26,8 +26,10 @@ Therefore, AWS launched a new feature called `EC2 Instance Connect Endpoint Serv
   <img src="images/ec2-connect-endpoint.png" alt="image description" width="500" height="400">
 </p>
 
-Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
+Refer : \
+[Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
 
+[Connect to your instances without requiring a public IPv4 address using EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-with-ec2-instance-connect-endpoint.html)
 
 ## Using the EC2 Instance Connect Endpoint Service
 
@@ -64,7 +66,7 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 * Choose the APP private subnet in the picture above
 * Click Create endpoint
 * Once the endpoint is created, please check the console and copy the Endpoint ID
-  
+Refer : 
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
@@ -79,4 +81,4 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 [Allow users to use EC2 Instance Connect Endpoint to connect to instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-CreateInstanceConnectEndpoint)
 
 
-[Connect to your instances without requiring a public IPv4 address using EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-with-ec2-instance-connect-endpoint.html)
+
