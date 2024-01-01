@@ -70,8 +70,11 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 Refer : [Create an EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ec2-instance-connect-endpoints.html#create-eice)
 
 4. Create Policies
-* Create custom Policies named `enable-enpoint-policy`
-
+* Navigate to IAM > Policies > Create Policy
+* Choose Json
+* Fill in the json below to Policy editor
+* You need to change `arn:aws:ec2:region:account-id:instance-connect-endpoint/enpoint-id` to your endpoint-id that I mentioned above
+* `ec2:osuser` depend on the instant type that you lanuch. In this case, I lanuch an ubuntu.
  ```json
 {
     "Version": "2012-10-17",
@@ -79,7 +82,7 @@ Refer : [Create an EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AW
             "Sid": "EC2InstanceConnect",
             "Action": "ec2-instance-connect:OpenTunnel",
             "Effect": "Allow",
-            "Resource": "arn:aws:ec2:region:account-id:instance-connect-endpoint/eice-123456789abcdef",
+            "Resource": "arn:aws:ec2:region:account-id:instance-connect-endpoint/enpoint-id",
             "Condition": {
                 "NumericEquals": {
                     "ec2-instance-connect:remotePort": "22"
