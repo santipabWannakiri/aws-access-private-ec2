@@ -29,7 +29,7 @@ Therefore, AWS launched a new feature called `EC2 Instance Connect Endpoint Serv
 Refer : [Secure Connectivity from Public to Private: Introducing EC2 Instance Connect Endpoint](https://aws.amazon.com/blogs/compute/secure-connectivity-from-public-to-private-introducing-ec2-instance-connect-endpoint-june-13-2023/)
 
 
-## Prerequisites before using the EC2 Instance Connect Endpoint Service
+## Using the EC2 Instance Connect Endpoint Service
 
 ### IAM USER, Group, Policy and Role
 <p align="center">
@@ -43,12 +43,14 @@ Before we start to create any AWS resources and EC2 instants, I would like to st
 2. Create `User groups`
 * Create a user group named `azd-creator-group`.
 * Attach appropriate policies to the group, such as IAMFullAccess, AmazonEC2FullAccess, AmazonVPCFullAccess, etc.
+3. Create `Role`
+* Create a role named `azd-assume-role`
+* Configure Trust relationships to IAM USER `azd-assume`
+
 4. Create Policies
 * Create custom Policies named `enable-enpoint-policy`
 * 
-3. Create `Role`
-* Create a rile named `azd-assume-role`
-* 
+
 
 [Grant IAM permissions to use EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
