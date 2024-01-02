@@ -117,7 +117,13 @@ Refer : [Create an EC2 Instance Connect Endpoint](https://docs.aws.amazon.com/AW
  ```
 Refer : [Allow users to use EC2 Instance Connect Endpoint to connect to instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/permissions-for-ec2-instance-connect-endpoint.html#iam-OpenTunnel)
 
-
+5. Lanuch EC2 instant in the private subnet
+* Navigate to EC2 > Launch an instance
+* Provide Key pair and don't forget to keep it in your local
+* Click on Network settings
+* Choose the VPC that we created on step 1
+* Choose the app private subnet that we have created on step 1
+* On the firewall, please check that it allows TCP port 22
 
 
 [connect to an instance using the instance ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html#connect-linux-inst-eic-cli-ssh)
