@@ -125,7 +125,14 @@ Refer : [Allow users to use EC2 Instance Connect Endpoint to connect to instance
 * Choose the app private subnet that we have created on step 1
 * On the firewall, please check that it allows TCP port 22
 
+6. Assume Role before connect to your instant
+* In order to configure credentials and assume role, please look at this link [Assume Role configuration](https://github.com/santipabWannakiri/spring-boot-logstash-aop?tab=readme-ov-file#assume-role-configuration)
 
+7. Connect to your Linux instance using SSH
+* 
+ ```ssh
+ssh -i my-key-pair.pem ec2-user@i-0123456789example -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-0123456789example'
+ ```
 [connect to an instance using the instance ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html#connect-linux-inst-eic-cli-ssh)
 
 
