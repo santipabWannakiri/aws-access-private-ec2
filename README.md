@@ -129,10 +129,18 @@ Refer : [Allow users to use EC2 Instance Connect Endpoint to connect to instance
 * In order to configure credentials and assume role, please look at this link [Assume Role configuration](https://github.com/santipabWannakiri/spring-boot-logstash-aop?tab=readme-ov-file#assume-role-configuration)
 
 7. Connect to your Linux instance using SSH
-* 
- ```ssh
-ssh -i my-key-pair.pem ec2-user@i-0123456789example -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-0123456789example'
+* Once you are done assuming the role, you can use the below command to connect to your instant.
+ ```cmd
+ssh -i my-key-pair.pem ubuntu@i-0123456789example -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-0123456789example'
  ```
+* You might get `AccessDeniedException` to solve the problem specify the `--max-tunnel-duration` parameter 
+ ```cmd
+ssh -i ./my-key-pair.pem ubuntu@i-06b41c38cb4823f59 -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-06b41c38cb4823f59 --max-tunnel-duration 3600' 
+ ```
+* You can also view connection process by adding `-v` for investigate any problem
+ ```cmd
+ssh -i ./my-key-pair.pem ubuntu@i-06b41c38cb4823f59 -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-06b41c38cb4823f59 --max-tunnel-duration 3600' -v
+ ```  
 [connect to an instance using the instance ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html#connect-linux-inst-eic-cli-ssh)
 
 
