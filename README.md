@@ -140,11 +140,6 @@ ssh -i ./my-key-pair.pem ubuntu@i-06b41c38cb4823f59 -o ProxyCommand='aws ec2-ins
 * You can also view connection process by adding `-v` for investigate any problem
  ```cmd
 ssh -i ./my-key-pair.pem ubuntu@i-06b41c38cb4823f59 -o ProxyCommand='aws ec2-instance-connect open-tunnel --instance-id i-06b41c38cb4823f59 --max-tunnel-duration 3600' -v
- ```  
-[connect to an instance using the instance ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html#connect-linux-inst-eic-cli-ssh)
+ ```
 
-
-
-
-
-
+Refer : [Connect to your Linux instance using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-using-eice.html)
